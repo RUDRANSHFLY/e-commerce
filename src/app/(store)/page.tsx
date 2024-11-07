@@ -9,12 +9,12 @@ export default async function Home() {
 
   return (
     <div>
+      <DiscountBanner />
       <div
         className={
           "flex flex-col items-center justify-start min-h-screen bg-gray-100 p-4"
         }
       >
-        <DiscountBanner />
         <ProductsView products={products} categories={categories} />
       </div>
     </div>
