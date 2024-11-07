@@ -14,9 +14,13 @@ import Link from "next/link";
 
 import React from "react";
 import { Button } from "../ui/button";
+import { useBasketStore } from "../../../store/store";
 
 const Header = () => {
   const { user } = useUser();
+  const itemCount = useBasketStore((state) =>
+    state.items.reduce((total, item) => total + item.quantity, 0)
+  );
 
   return (
     <header className={"flex flex-wrap justify-between items-center px-4 py-2"}>
@@ -54,6 +58,13 @@ const Header = () => {
           }
         >
           <TrolleyIcon className={"w-6 h-6"} />
+          <span
+            className={
+              "absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs"
+            }
+          >
+            {itemCount}
+          </span>
           <span>My Basket</span>
         </Link>
 
