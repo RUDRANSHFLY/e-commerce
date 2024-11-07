@@ -4,6 +4,7 @@ import React from "react";
 import { imageUrl } from "@/sanity/lib/imageUrl";
 import Image from "next/image";
 import { PortableText } from "next-sanity";
+import AddToBasketButton from "@/components/ui/addToBasketButton";
 
 const ProductPage = async ({
   params,
@@ -61,6 +62,10 @@ const ProductPage = async ({
                 <PortableText value={product.description} />
               )}
             </div>
+          </div>
+
+          <div className={"mt-6"}>
+            <AddToBasketButton product={product} disabled={isOutOfStock} />
           </div>
         </div>
       </div>
