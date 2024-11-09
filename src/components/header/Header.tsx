@@ -94,9 +94,11 @@ const Header = () => {
                 <p className={"font-bold"}>{user?.fullName}</p>
               </div>
             </SignedIn>
-            <SignOutButton>
-              <Button variant={"destructive"}>Sign Out</Button>
-            </SignOutButton>
+            <SignedIn>
+              <SignOutButton>
+                <Button variant={"destructive"}>Sign Out</Button>
+              </SignOutButton>
+            </SignedIn>
           </div>
         </ClerkLoaded>
       </div>
