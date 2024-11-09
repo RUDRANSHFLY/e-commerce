@@ -149,10 +149,10 @@ export const orderType = defineType({
       amount: "totalPrice",
       currency: "currency",
       orderId: "orderNumber",
-      email: "email",
+      email: "customerEmail",
     },
     prepare(select) {
-      const orderIdSnippet = `${select.orderId.slic(0, 5)}...${select.orderId.slic(-5)}}`;
+      const orderIdSnippet = `${select.orderId.slice(0, 5)}...${select.orderId.slice(-5)}}`;
       return {
         title: `${select.name} (${orderIdSnippet})`,
         subtitle: `${select.amount} ${select.currency} ${select.email}`,
