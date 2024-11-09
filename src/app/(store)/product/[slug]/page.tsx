@@ -6,6 +6,9 @@ import Image from "next/image";
 import { PortableText } from "next-sanity";
 import AddToBasketButton from "@/components/ui/addToBasketButton";
 
+export const dynamic = "force-static";
+export const revalidate = 60;
+
 const ProductPage = async ({
   params,
 }: {
